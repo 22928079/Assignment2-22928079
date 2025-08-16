@@ -15,7 +15,7 @@ function Phone(props) {
 
 	return (
 		<tr>
-            <td>{ phone.name }</td>
+            <td>{ phone.category }</td>
             <td>{ phone.number }</td>
             <td style={
                 {
