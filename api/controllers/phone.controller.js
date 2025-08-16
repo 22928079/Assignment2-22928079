@@ -5,8 +5,8 @@ const Op = db.Sequelize.Op;
 // Create phone
 exports.create = (req, res) => {
     const phone = {
-        name: req.body.name,
-        number: req.body.number,
+        phone_type: req.body.category,
+        phone_number: req.body.number,
         contactId: parseInt(req.params.contactId)
     };
 
