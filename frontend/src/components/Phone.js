@@ -12,11 +12,11 @@ function Phone(props) {
 
         setPhones(newPhones);
     }
-
+    
 	return (
 		<tr>
-            <td>{ phone.category }</td>
-            <td>{ phone.number }</td>
+            <td>{ phone.phone_type }</td>
+            <td>{ phone.phone_number }</td>
             <td style={
                 {
                     width: '14px',

@@ -19,7 +19,7 @@
     background-color: #E0E0E0;
 }
 .contact > .title {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

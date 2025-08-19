@@ -7,15 +7,15 @@ function NewPhone(props) {
 
     async function createPhone(e) {
         e.preventDefault();
-
         const response = await fetch('http://localhost/api/contacts/' + contact.id + '/phones', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                category,
                 number,
-                category
+                
             })
         });
 
