@@ -4,6 +4,7 @@ import PhoneList from './PhoneList.js';
 function Contact(props) {
     const {contact, contacts, setContacts} = props;
     const [expanded, setExpanded] = useState(false);
+    const [update, setUpdate] = useState(false);
     const [phones, setPhones] = useState([]);
 
     useEffect(() => {
@@ -16,6 +17,10 @@ function Contact(props) {
     }, []);
 
     const expandStyle = {
+        display: expanded ? 'block' : 'none'
+    };
+
+    const editStyle = {
         display: expanded ? 'block' : 'none'
     };
 
@@ -41,6 +46,7 @@ function Contact(props) {
                 <p><strong>Name:</strong>{contact.name}</p>
                 <p><strong>Address:</strong>{contact.address}</p>
                 <p><i>Click the contact to <strong>expand or collapse</strong> {contact.name}'s phone list</i></p>
+                <button className='button yellow' onClick={doDelete}>Edit Contact</button>
                 <button className='button red' onClick={doDelete}>Delete Contact</button>
             </div>
 

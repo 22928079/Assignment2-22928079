@@ -54,6 +54,12 @@
 .red:hover {
     background-color: #da190b;
 }
+.yellow {
+    background-color: #afa74c;
+}
+.yellow:hover {
+    background-color: #9da046;
+}
 
 .page {
     height: 100vh;
