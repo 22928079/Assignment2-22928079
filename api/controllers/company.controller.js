@@ -45,7 +45,7 @@ exports.findOne = (req, res) => {
     Companies.findOne({
         where: {
             contact_id: req.params.contact_id,
-            id: req.params.company_id
+            company_id: req.params.company_id
         }
     })
         .then(data => {
@@ -63,22 +63,22 @@ exports.update = (req, res) => {
     const id = req.params.company_id;
 
     Companies.update(req.body, {
-        where: { id: id, contact_id: req.params.contact_id }
+        where: { company_id: id, contact_id: req.params.contact_id }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was updated successfully."
+                    message: "Company was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Phone`
+                    message: `Cannot update Company`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Phone with id=" + id
+                message: "Error updating Company with id=" + id
             });
         });
 };
@@ -88,22 +88,22 @@ exports.delete = (req, res) => {
     const id = req.params.company_id;
 
     Companies.destroy({
-        where: { id: id, contact_id: req.params.contact_id }
+        where: { company_id: id, contact_id: req.params.contact_id }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was deleted successfully!"
+                    message: "Company was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Phone`
+                    message: `Cannot delete Company`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Phone with id=" + id
+                message: "Could not delete Company with id=" + id
             });
         });
 };
