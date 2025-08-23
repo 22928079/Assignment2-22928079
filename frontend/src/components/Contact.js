@@ -6,6 +6,8 @@ function Contact(props) {
     const [expanded, setExpanded] = useState(false);
     const [update, setUpdate] = useState(false);
     const [phones, setPhones] = useState([]);
+    const [name, setName] = useState(contact.name);
+    const [address, setAddress] = useState(contact.address);
 
     useEffect(() => {
         fetch('http://localhost/api/contacts/' + contact.id + '/phones')
@@ -17,10 +19,6 @@ function Contact(props) {
     }, []);
 
     const expandStyle = {
-        display: expanded ? 'block' : 'none'
-    };
-
-    const editStyle = {
         display: expanded ? 'block' : 'none'
     };
 
@@ -38,16 +36,53 @@ function Contact(props) {
         setContacts(newContacts);
     }
 
+    function allowEdit(){
+        setUpdate(!update);
+    }
+
+    async function doUpdate(e) {
+        e.preventDefault();
+        contact.name = name;
+        contact.address = address;
+        const response = await fetch('http://localhost/api/contacts/' + contact.id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                address
+            })
+        });
+        allowEdit();
+    }
+
     return (
-        <div key={contact.id} className='contact' onClick={(e) => setExpanded(!expanded)}>
+        <div key={contact.id} className='contact' >
             
-            <div className='title'>
+            <div className='title' onClick={(e) => setExpanded(!expanded)}>
                 <h3>Contact Summary:</h3>
+                {!update?
+                <>
                 <p><strong>Name:</strong>{contact.name}</p>
                 <p><strong>Address:</strong>{contact.address}</p>
                 <p><i>Click the contact to <strong>expand or collapse</strong> {contact.name}'s phone list</i></p>
-                <button className='button yellow' onClick={doDelete}>Edit Contact</button>
-                <button className='button red' onClick={doDelete}>Delete Contact</button>
+                </>
+                :
+                <>
+                <p><strong>Name:</strong>
+                <input type='text' placeholder='Name' onChange={(e) => setName(e.target.value)} value={name}/>
+                </p>
+                <p><strong>Address:</strong>
+                <input type='text' placeholder='Address' onChange={(e) => setAddress(e.target.value)} value={address}/>
+                </p>
+                <p><i>Click the contact to <strong>expand or collapse</strong> {contact.name}'s phone list</i></p>
+                </>
+                }
+            </div>
+            <div className="contact-button">
+            {!update?<button className='button yellow' onClick={allowEdit}>Edit Contact</button>:<button className='button yellow' onClick={doUpdate}>Save Contact</button>}
+            <button className='button red' onClick={doDelete}>Delete Contact</button>
             </div>
 
             <div style={expandStyle}>
