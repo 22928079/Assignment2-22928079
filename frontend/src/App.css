@@ -152,6 +152,49 @@
     width: 100%;
 }
 
+.company-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.company-list > table {
+    margin-top: 10px;
+}
+.company-list > table > thead > tr > th {
+    padding: 5px;
+}
+.company-list > table > tbody > tr > td {
+    padding: 5px;
+}
+
+.company-list > table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.company-list > table td, .company-list > table th {
+    border: 1px solid #b1b1b1;
+    padding: 8px;
+}
+
+.company-list > table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+.new-company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.new-company > input {
+    margin-right: 5px;
+    width: 100%;
+}
+
 .stats > p {
     color: gray;
     cursor: pointer;
