@@ -133,7 +133,7 @@ X-Powered-By: Express
 ```
 3. Delete Contacts API (DELETE)  
 http delete http://localhost/api/contacts/{contact_id}  
-Delete the contact with ID provided in parameter
+Delete the contact with ID provided in parameter.
 ```bash
 http delete http://localhost/api/contacts/2
 
@@ -153,7 +153,8 @@ X-Powered-By: Express
 ```
 
 4. Update Contacts API (PUT)  
-http put http://localhost/api/contacts/{contact_id} name="{name_to_change}" address="{address_to_change}"
+http put http://localhost/api/contacts/{contact_id} name="{name_to_change}" address="{address_to_change}"  
+Update the contact with ID provided in parameter and content in payload.
 ``` bash
 http put http://localhost/api/contacts/2 name="Levin Update" address="Levin Address Update"
 
@@ -182,8 +183,8 @@ X-Powered-By: Express
 ### Phone API
 
 1. Add Phones API  (POST)  
-http post http://localhost/api/contacts/{contact_id}/phones phone_type="{type_for_phone}" phone_number="{phone_number}"
-
+http post http://localhost/api/contacts/{contact_id}/phones phone_type="{type_for_phone}" phone_number="{phone_number}"  
+Create a new phone using the payload data in specific Contact defined by contact_id.
 ```bash
 http post http://localhost/api/contacts/1/phones phone_type="Home" phone_number="323123123"
 
@@ -210,8 +211,8 @@ X-Powered-By: Express
 
 ```
 2. Get Phones API  (GET)  
-http get http://localhost/api/contacts/{contact_id}/phones
-
+http get http://localhost/api/contacts/{contact_id}/phones  
+Returns a list of all existing Phones in specific Contact defined by contact_id.
 ```bash
 http get http://localhost/api/contacts/1/phones
 
@@ -248,8 +249,8 @@ X-Powered-By: Express
 
 ```
 3. Delete Phones API (DELETE)  
-http delete http://localhost/api/contacts/{contact_id}/phones/{phone_id}
-
+http delete http://localhost/api/contacts/{contact_id}/phones/{phone_id}  
+Delete the phone defined by phone_id in specific Contact defined by contact_id.
 ```bash
 http delete http://localhost/api/contacts/1/phones/2
 
@@ -269,7 +270,8 @@ X-Powered-By: Express
 ```
 
 4. Update Phones API (PUT)  
-http put http://localhost/api/contacts/{contact_id}/phones/{phone_id} phone_type="{type_for_phone}" phone_number="{phone_number}"
+http put http://localhost/api/contacts/{contact_id}/phones/{phone_id} phone_type="{type_for_phone}" phone_number="{phone_number}"  
+Update the phone defined by phone_id with content in payload in specific Contact defined by contact_id.
 ``` bash
 http put http://localhost/api/contacts/1/phones/2 phone_type="Other" phone_number="3231231234"
 
@@ -300,8 +302,8 @@ X-Powered-By: Express
 ### Company API
 
 1. Add Companies API  (POST)  
-http post http://localhost/api/contacts/{contact_id}/companies company_name="{name_for_company}" company_address="{address_for_company}"
-
+http post http://localhost/api/contacts/{contact_id}/companies company_name="{name_for_company}" company_address="{address_for_company}"  
+Create a new company using the payload data in specific Contact defined by contact_id.
 ```bash
 http post http://localhost/api/contacts/1/companies company_name="New Company" company_address="New Company Address"
 
@@ -328,8 +330,8 @@ X-Powered-By: Express
 
 ```
 2. Get Phones API  (GET)  
-http get http://localhost/api/contacts/{contact_id}/companies
-
+http get http://localhost/api/contacts/{contact_id}/companies  
+Returns a list of all existing Companies in specific Contact defined by contact_id.
 ```bash
 http get http://localhost/api/contacts/1/companies
 
@@ -366,7 +368,8 @@ X-Powered-By: Express
 
 ```
 3. Delete Phones API (DELETE)  
-http delete http://localhost/api/contacts/{contact_id}/companies/{company_id}
+http delete http://localhost/api/contacts/{contact_id}/companies/{company_id}  
+Delete the company defined by company_id in specific Contact defined by contact_id.
 
 ```bash
 http delete http://localhost/api/contacts/1/companies/2
@@ -388,7 +391,8 @@ X-Powered-By: Express
 ```
 
 4. Update Phones API (PUT)  
-http put http://localhost/api/contacts/{contact_id}/companies/{company_id} phone_type="{name_for_contact}" phone_number="{address_for_contact}"
+http put http://localhost/api/contacts/{contact_id}/companies/{company_id} phone_type="{name_for_contact}" phone_number="{address_for_contact}"  
+Update the company defined by company_id with content in payload in specific Contact defined by contact_id.
 ``` bash
 http put http://localhost/api/contacts/1/companies/2 company_name="New Company Update" company_address="New Company Address Update"
 
