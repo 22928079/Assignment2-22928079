@@ -1,6 +1,7 @@
 const db = require("../models");
 const Contacts = db.contacts;
 const Phones = db.phones;
+const Companies = db.companies;
 const Op = db.Sequelize.Op;
 
 // Create contact
@@ -56,13 +57,12 @@ exports.update = (req, res) => {
     const id = req.params.contactId;
 
     Contacts.update(req.body, {
-        where: { id: id }
+        where: { id: id },
+        returning: true
     })
-    .then(num => {
+    .then(([num,[data]]) => {
         if (num == 1) {
-            res.send({
-                message: "Contact was updated successfully."
-            });
+            res.send(data);
         } else {
             res.send({
                 message: `Cannot update Contact`
@@ -80,28 +80,32 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = parseInt(req.params.contactId);
 
-    Phones.destroy({
-        where: { contactId: id }
+    Companies.destroy({
+        where: { contact_id: id }
     })
-    .then(num => {
-        Contacts.destroy({
-            where: { id: id }
+    .then(num=>{
+        Phones.destroy({
+            where: { contactId: id }
         })
         .then(num => {
-            if (num == 1) {
-                res.send({
-                    message: "Contact was deleted successfully!"
+            Contacts.destroy({
+                where: { id: id }
+            })
+            .then(num => {
+                if (num == 1) {
+                    res.send({
+                    });
+                } else {
+                    res.send({
+                        message: `Cannot delete Contact`
+                    });
+                }
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Could not delete Contact with id=" + id
                 });
-            } else {
-                res.send({
-                    message: `Cannot delete Contact`
-                });
-            }
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: "Could not delete Contact with id=" + id
             });
         });
-    });
+    })
 };

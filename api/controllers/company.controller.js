@@ -63,13 +63,12 @@ exports.update = (req, res) => {
     const id = req.params.company_id;
 
     Companies.update(req.body, {
-        where: { company_id: id, contact_id: req.params.contact_id }
+        where: { company_id: id, contact_id: req.params.contact_id },
+        returning: true
     })
-        .then(num => {
+        .then(([num,[data]]) => {
             if (num == 1) {
-                res.send({
-                    message: "Company was updated successfully."
-                });
+                res.send(data);
             } else {
                 res.send({
                     message: `Cannot update Company`
@@ -93,7 +92,6 @@ exports.delete = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Company was deleted successfully!"
                 });
             } else {
                 res.send({

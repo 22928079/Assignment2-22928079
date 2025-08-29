@@ -67,7 +67,8 @@ You will see the example of running the PostgreSQL inside the container.
 ### Contact API
 
 1. Add Contacts API  (POST)  
-http post http://localhost/api/contacts name="{name_for_contact}" address="{address_for_contact}"
+http post http://localhost/api/contacts name="{name_for_contact}" address="{address_for_contact}"  
+Create a new contact using the payload data.
 
 ```bash
 http post http://localhost/api/contacts name="Levin" address="Levin Address"
@@ -94,7 +95,8 @@ X-Powered-By: Express
 
 ```
 2. Get Contacts API  (GET)  
-http get http://localhost/api/contacts
+http get http://localhost/api/contacts  
+Returns a list of all existing Contacts.
 
 ```bash
 http get http://localhost/api/contacts
@@ -130,7 +132,8 @@ X-Powered-By: Express
 
 ```
 3. Delete Contacts API (DELETE)  
-http delete http://localhost/api/contacts/{contact_id}
+http delete http://localhost/api/contacts/{contact_id}  
+Delete the contact with ID provided in parameter
 ```bash
 http delete http://localhost/api/contacts/2
 
@@ -146,9 +149,7 @@ Server: nginx/1.25.1
 Vary: Origin
 X-Powered-By: Express
 
-{
-    "message": "Contact was deleted successfully!"
-}
+{}
 ```
 
 4. Update Contacts API (PUT)  
@@ -169,7 +170,11 @@ Vary: Origin
 X-Powered-By: Express
 
 {
-    "message": "Contact was updated successfully."
+    "address": "Levin Address Update",
+    "createdAt": "2025-08-25T13:02:02.048Z",
+    "id": 2,
+    "name": "Levin Update",
+    "updatedAt": "2025-08-25T13:06:54.871Z"
 }
 
 ```
@@ -260,9 +265,7 @@ Server: nginx/1.25.1
 Vary: Origin
 X-Powered-By: Express
 
-{
-    "message": "Phone was deleted successfully!"
-}
+{}
 ```
 
 4. Update Phones API (PUT)  
@@ -283,7 +286,12 @@ Vary: Origin
 X-Powered-By: Express
 
 {
-    "message": "Phone was updated successfully."
+    "contactId": 1,
+    "createdAt": "2025-08-25T13:27:07.923Z",
+    "id": 2,
+    "phone_number": "3231231234",
+    "phone_type": "Other",
+    "updatedAt": "2025-08-25T14:36:28.278Z"
 }
 
 
@@ -375,9 +383,7 @@ Server: nginx/1.25.1
 Vary: Origin
 X-Powered-By: Express
 
-{
-    "message": "Company was deleted successfully!"
-}
+{}
 
 ```
 
@@ -399,7 +405,12 @@ Vary: Origin
 X-Powered-By: Express
 
 {
-    "message": "Company was updated successfully."
+    "company_address": "New Company Address Update",
+    "company_id": 2,
+    "company_name": "New Company Update",
+    "contact_id": 1,
+    "createdAt": "2025-08-26T11:38:39.200Z",
+    "updatedAt": "2025-08-26T11:46:52.325Z"
 }
 
 

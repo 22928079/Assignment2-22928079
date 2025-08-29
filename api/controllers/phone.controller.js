@@ -63,13 +63,12 @@ exports.update = (req, res) => {
     const id = req.params.phoneId;
 
     Phones.update(req.body, {
-        where: { id: id, contactId: req.params.contactId }
+        where: { id: id, contactId: req.params.contactId },
+        returning: true
     })
-        .then(num => {
+        .then(([num,[data]]) => {
             if (num == 1) {
-                res.send({
-                    message: "Phone was updated successfully."
-                });
+                res.send(data);
             } else {
                 res.send({
                     message: `Cannot update Phone`
@@ -93,7 +92,6 @@ exports.delete = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was deleted successfully!"
                 });
             } else {
                 res.send({
