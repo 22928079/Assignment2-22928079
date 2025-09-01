@@ -93,7 +93,12 @@ X-Powered-By: Express
     "updatedAt": "2025-08-25T13:02:02.048Z"
 }
 
-```
+```  
+Task 2 Post Contact
+![Alt text](./Assignment2_Screenshots/task2.2%20POST%20Contact.png)  
+Task 3.4 Post Contact
+![Alt text](./Assignment2_Screenshots/task3.4.2%20POST%20Contact.png)  
+
 2. Get Contacts API  (GET)  
 http get http://localhost/api/contacts  
 Returns a list of all existing Contacts.
@@ -130,7 +135,16 @@ X-Powered-By: Express
     }
 ]
 
-```
+```  
+Task 2 Get Contacts  
+![Alt text](./Assignment2_Screenshots/task2.1%20GET%20Contacts.png)  
+Task 2 Get Contact by ID  
+![Alt text](./Assignment2_Screenshots/task2.2.1%20GET%20Contact%20by%20ID.png)  
+Task 3.4 Get Contacts  
+![Alt text](./Assignment2_Screenshots/task3.4.1%20GET%20Contacts.png)  
+Task 3.4 Get Contact by ID  
+![Alt text](./Assignment2_Screenshots/task3.4.1.1%20GET%20Contact%20by%20ID.png)  
+
 3. Delete Contacts API (DELETE)  
 http delete http://localhost/api/contacts/{contact_id}  
 Delete the contact with ID provided in parameter.
@@ -151,6 +165,10 @@ X-Powered-By: Express
 
 {}
 ```
+Task 2 Delete Contact by ID
+![Alt text](./Assignment2_Screenshots/task2.3%20DELETE%20Contact%20by%20ID.png)  
+Task 3.4 Delete Contact by ID
+![Alt text](./Assignment2_Screenshots/task3.4.4%20DELETE%20Contact%20by%20ID.png)  
 
 4. Update Contacts API (PUT)  
 http put http://localhost/api/contacts/{contact_id} name="{name_to_change}" address="{address_to_change}"  
@@ -179,6 +197,10 @@ X-Powered-By: Express
 }
 
 ```
+Task 2 Update Contact by ID
+![Alt text](./Assignment2_Screenshots/task2.4%20PUT%20Contact%20by%20ID.png)  
+Task 3.4 Update Contact by ID  
+![Alt text](./Assignment2_Screenshots/task3.4.3%20PUT%20Contact%20by%20ID.png)  
 
 ### Phone API
 
@@ -210,6 +232,12 @@ X-Powered-By: Express
 }
 
 ```
+
+Task 2 Post Phone  
+![Alt text](./Assignment2_Screenshots/task2.6%20POST%20Phone.png)  
+Task 3.4 Post Phone  
+![Alt text](./Assignment2_Screenshots/task3.4.6%20POST%20Phone.png)  
+
 2. Get Phones API  (GET)  
 http get http://localhost/api/contacts/{contact_id}/phones  
 Returns a list of all existing Phones in specific Contact defined by contact_id.
@@ -248,6 +276,15 @@ X-Powered-By: Express
 ]
 
 ```
+Task 2 Get Phones  
+![Alt text](./Assignment2_Screenshots/task2.5%20GET%20Phones.png)  
+Task 2 Get Phone by ID  
+![Alt text](./Assignment2_Screenshots/task2.5.1%20GET%20Phone%20by%20ID.png)  
+Task 3.4 Get Phones  
+![Alt text](./Assignment2_Screenshots/task3.4.5%20GET%20Phones.png)  
+Task 3.4 Get Phone by ID  
+![Alt text](./Assignment2_Screenshots/task3.4.5.1%20GET%20Phone%20by%20ID.png)  
+
 3. Delete Phones API (DELETE)  
 http delete http://localhost/api/contacts/{contact_id}/phones/{phone_id}  
 Delete the phone defined by phone_id in specific Contact defined by contact_id.
@@ -268,6 +305,10 @@ X-Powered-By: Express
 
 {}
 ```
+Task 2 Delete Phone by ID  
+![Alt text](./Assignment2_Screenshots/task2.7%20DELETE%20Phone%20by%20ID.png)  
+Task 3.4 Delete Phone by ID  
+![Alt text](./Assignment2_Screenshots/task3.4.8%20DELETE%20Phone%20by%20ID.png)  
 
 4. Update Phones API (PUT)  
 http put http://localhost/api/contacts/{contact_id}/phones/{phone_id} phone_type="{type_for_phone}" phone_number="{phone_number}"  
@@ -298,6 +339,10 @@ X-Powered-By: Express
 
 
 ```
+Task 2 Update Phone by ID
+![Alt text](./Assignment2_Screenshots/task2.8%20PUT%20Phone%20by%20ID.png)  
+Task 3.4 Update Phone by ID  
+![Alt text](./Assignment2_Screenshots/task3.4.7%20PUT%20Phone%20by%20ID.png)  
 
 ### Company API
 
@@ -327,6 +372,8 @@ X-Powered-By: Express
     "createdAt": "2025-08-26T11:38:39.200Z",
     "updatedAt": "2025-08-26T11:38:39.200Z"
 }
+Task 4.2 Post Company
+![Alt text](./Assignment2_Screenshots/task4.2.2%20POST%20Company.png)  
 
 ```
 2. Get Phones API  (GET)  
@@ -367,6 +414,12 @@ X-Powered-By: Express
 ]
 
 ```
+Task 4.2 Get Companies
+![Alt text](./Assignment2_Screenshots/task4.2.1%20GET%20Companies.png)  
+Task 4.2 Get Company by ID
+![Alt text](./Assignment2_Screenshots/task4.2.1.1%20GET%20Company%20by%20ID.png)  
+
+
 3. Delete Phones API (DELETE)  
 http delete http://localhost/api/contacts/{contact_id}/companies/{company_id}  
 Delete the company defined by company_id in specific Contact defined by contact_id.
@@ -389,6 +442,8 @@ X-Powered-By: Express
 {}
 
 ```
+Task 4.2 Delete Company by ID
+![Alt text](./Assignment2_Screenshots/task4.2.4%20DELETE%20Company%20by%20ID.png)  
 
 4. Update Phones API (PUT)  
 http put http://localhost/api/contacts/{contact_id}/companies/{company_id} phone_type="{name_for_contact}" phone_number="{address_for_contact}"  
@@ -419,7 +474,8 @@ X-Powered-By: Express
 
 
 ```
-
+Task 4.2 Update Company by ID
+![Alt text](./Assignment2_Screenshots/task4.2.3%20PUT%20Company%20by%20ID.png)  
 ## App Frontend Interface
 
 ### Contact Interface
